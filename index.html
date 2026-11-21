@@ -20,6 +20,7 @@ a{color:#064e63}a:hover{color:#023a4e}
 .navlink{color:#12262d;text-decoration:none;padding:10px 4px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
 .navlink:hover{color:#064e63;border-bottom-color:#748758}
 .btn-primary{transition:transform .15s ease,box-shadow .2s ease}
+.btn-primary:disabled{opacity:.7;cursor:wait}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(2,58,78,.25)}
 .btn-ghost{transition:background .2s,color .2s}
 .btn-ghost:hover{background:rgba(249,232,122,.12)}
@@ -238,22 +239,16 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #f9e8
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #d3e1e4">New SISR pieces, calls for pitches and event invites.&nbsp;</p>
 </div>
 <div style="flex: 999 1 460px; min-width: 0; background: #023a4e; border-radius: 20px; padding: 36px; box-sizing: border-box">
-<div id="join-done" role="status" hidden style="display: flex; flex-direction: column; gap: 12px; min-height: 260px; justify-content: center">
-<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f9e87a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
-<p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 34px">One last step.</p>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #d3e1e4">Send the prefilled email to dmyung2@jh.edu and we'll add <span id="join-email-echo"></span> to the list.</p>
-<a id="join-mailto" class="btn-primary" href="mailto:dmyung2@jh.edu" style="align-self: flex-start; text-decoration: none; background: #f9e87a; color: #023a4e; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">Send to dmyung2@jh.edu <span class="arrow" aria-hidden="true">→</span></a>
-<button id="join-reset" type="button" style="align-self: flex-start; margin-top: 8px; background: none; border: 1px solid rgba(255,255,255,0.35); color: #ffffff; border-radius: 999px; padding: 10px 18px; font: inherit; font-size: 14px; min-height: 44px; cursor: pointer">Add another email</button>
-</div>
 <form id="join-form" novalidate style="display: flex; flex-direction: column; gap: 22px">
+<div aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="tth-email" style="font-size: 14px; font-weight: 500">Hopkins email</label>
 <div style="display: flex; flex-wrap: wrap; gap: 10px">
 <input class="field" id="tth-email" name="email" type="email" autocomplete="email" placeholder="jhed@jhu.edu" aria-describedby="tth-email-help" style="flex: 1 1 240px; min-width: 0; min-height: 52px; box-sizing: border-box; border-radius: 12px; border: 1.5px solid #3d6e7e; background: #f6f7f2; color: #12262d; padding: 0 16px; font: inherit; font-size: 16px; outline: none">
-<button class="btn-primary" type="submit" style="min-height: 52px; border: 0; border-radius: 12px; background: #f9e87a; color: #023a4e; font: inherit; font-weight: 600; font-size: 16px; padding: 0 24px; cursor: pointer">Subscribe</button>
+<button id="join-submit" class="btn-primary" type="submit" style="min-height: 52px; border: 0; border-radius: 12px; background: #f9e87a; color: #023a4e; font: inherit; font-weight: 600; font-size: 16px; padding: 0 24px; cursor: pointer">Subscribe</button>
 </div>
 <p id="join-error" role="alert" hidden style="margin: 0; font-size: 14px; color: #f9e87a"></p>
-<p id="tth-email-help" style="margin: 0; font-size: 13px; color: #a9c0c6">jhu.edu / jh.edu / jhmi.edu · Sign-ups go to dmyung2@jh.edu</p>
+<p id="tth-email-help" style="margin: 0; font-size: 13px; color: #a9c0c6">jhu.edu / jh.edu / jhmi.edu</p>
 </div>
 <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
 <legend style="font-size: 14px; font-weight: 500; margin-bottom: 10px; padding: 0">I'm interested in <span style="font-weight: 400; color: #a9c0c6">(optional)</span></legend>
